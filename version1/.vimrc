@@ -26,7 +26,7 @@ set incsearch
 set ignorecase
 
 " 关闭兼容模式
-set nocompatible
+"set nocompatible
 
 " vim 自身命令行模式智能补全
 set wildmenu
@@ -36,6 +36,9 @@ set mouse=a
  set t_Co=256
  "tui ge jian ke yong 
  set backspace=2
+ " 行 列
+ set cursorline
+ "set cursorcolumn
 "cscope --> quickfix
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 " <<
@@ -55,12 +58,12 @@ set encoding=utf-8
 language messages zh_CN.utf-8
 
 " 配色方案
-set background=dark
-let g:solarized_contrast="normal"
-let g:solarized_visibility="normal"
- color solarized
+"set background=dark
+"let g:solarized_contrast="normal"
+"let g:solarized_visibility="normal"
+ "color solarized
 "colorscheme solarized
-"colorscheme molokai
+colorscheme molokai
  "colorscheme phd
 
 " >>
@@ -305,7 +308,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 " YCM 补全菜单配色
 " 菜单
-highlight Pmenu ctermfg=2 ctermbg=3 guifg=#CC0000 guibg=#999966
+"highlight Pmenu ctermfg=2 ctermbg=3 guifg=#CC0000 guibg=#999966
 " 选中项
 "highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
 
@@ -387,6 +390,7 @@ let NERDTreeWinPos="left"
 "let NERDTreeCaseSensitiveSort=1 " 让文件排列更有序
 "let NERDTreeChDirMode=1 " 改变tree目录的同时改变工程的目录
 "let NERDTreeShowBookmarks=1
+" 启动时自动启动
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 " 显示隐藏文件
@@ -476,3 +480,4 @@ vnoremap <Leader>he :call HtmlEscape()<CR>
 "let g:instant_markdown_autostart = 0
 
 set tags+=../tags
+set tags+=~/download/llvm/tags
