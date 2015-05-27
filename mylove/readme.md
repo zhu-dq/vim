@@ -40,9 +40,9 @@ sudo make VIMRUNTIMEDIR=/usr/share/vim/vim74 <br>sudo make install
 
 
 ### 第五步  markdown 生效的前提条件（下面命令需要翻墙）
-> gem install pygments.rb<br>
-    gem install redcarpet<br>
-    npm -g install instant-markdown-d
+>sudo gem install pygments.rb<br>
+  sudo  gem install redcarpet<br>
+  sudo  npm -g install instant-markdown-d
 
 
 
