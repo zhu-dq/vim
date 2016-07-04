@@ -1,3 +1,7 @@
+
+### 前提0：安装vim依赖环境
+>   sudo apt-get build-dep vim   
+
 ### 前提1：源码编译最新版vim
 >    vim.org/sources.php<br>
 >   cd vim74/<br>
