@@ -17,12 +17,12 @@ set cursorline
 " 配色方案
 syntax enable
 "最爱
-colorscheme monokai
+"colorscheme monokai
 "下面两个结合也很好看
 "set background=dark
 "colorscheme solarized
 "colorscheme molokai
-" colorscheme phd
+colorscheme phd
 "----------------------------------------- 
 " 插件管理  pathogen+vundle
 "pathogen是为了解决每一个插件安装后文件分散到多个目录不好管理而存在的。
@@ -73,10 +73,11 @@ let g:ycm_confirm_extra_conf=0 			" 允许 vim 加载 .ycm_extra_conf.py 文件�
 let g:ycm_collect_identifiers_from_tags_files=1 " 开启 YCM 标签补全引擎 
 " 引入 C++ 标准库tags 
 "set tags+=/data/misc/software/misc./vim/stdcpp.tags 
-set tags+=/usr/include/c++/tags 
-set tags+=/home/zhudanqi/download/stltags/tags  "stl 
+"set tags+=/usr/include/c++/tags 
+"set tags+=/home/zhudanqi/download/stltags/tags  "stl
+set tags+=~/.vim/systags 
 set tags+=../tags				"F2  生成的tags
-set tags+=~/download/llvm/tags			"llvm tags
+"set tags+=~/download/llvm/tags			"llvm tags
 inoremap <leader>; <C-x><C-o> 			" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键 
 set completeopt-=preview 			" 补全内容不以分割子窗口形式出现，只显示补全列表 
 let g:ycm_min_num_of_chars_for_completion=1 	" 从第一个键入字符就开始罗列匹配项 
@@ -104,6 +105,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 " 设置快捷键实现一键编译及运行
 noremap <F2> :cd ..<CR>:!ctags -R<CR> 
 nmap <F5> :wa<CR>:cd ../build/<CR>:!rm -rf main<CR>:!cmake ..<CR>:make<CR>:cw<CR>:!clear;./main<CR>
+"ctags -I __THROW -I __attribute_pure__ -I __nonnull -I __attribute__ --file-scope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q  -f ~/.vim/systags /usr/include/* /usr/include/netinet/* /usr/include/arpa/* /usr/include/c++/5.3.1/* 
 "-----------------------------------------------------------------------------------
 " markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
