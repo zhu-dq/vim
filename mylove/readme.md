@@ -53,6 +53,7 @@ sudo make VIMRUNTIMEDIR=/usr/share/vim/vim74 <br>sudo make install
 ### PS
 >  把colors文件夹放到和bundle文件夹平行的位置，即把放到.vim下面
 
-
+### UPDATE
+>  可以用clang_complete代替YCM，clang_complete安装特别简单。
 
 

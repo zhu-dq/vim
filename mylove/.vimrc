@@ -39,6 +39,8 @@ call vundle#rc()                          " 执行Vundle初始化
 Bundle 'gmarik/vundle'                   
  "  YCM
 Bundle 'Valloric/YouCompleteMe'		     
+" clang_complete
+Bundle "Rip-Rip/clang_complete"
  "  插件管理  
 Bundle 'tpope/vim-pathogen'		         
   "  目录树
@@ -50,6 +52,18 @@ Bundle 'suan/vim-instant-markdown'
 Bundle 'tpope/vim-markdown'
 filetype indent plugin on                 " 安装完后打开文件类型
 "----------------------------------------------------------------
+" clang_complete
+" let g:clang_complete_copen=1
+" 不同系统.so文件位置可能不一样
+" let g:clang_library_path='/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
+"如需引入工程文件（h/cpp）的检测，需要在工程根目录添加一个.clang_complete文件，格式如下：
+"-DDEBUG
+"-include ../config.h
+"-I../common
+"-I/usr/include/c++/4.5.3/
+"-I/usr/include/c++/4.5.3/x86_64-slackware-linux/
+"
+"
 " 目录树 
  
 nmap <Leader>fl :NERDTreeToggle<CR> 		" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
